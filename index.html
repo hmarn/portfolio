@@ -128,8 +128,8 @@
             background: linear-gradient(180deg, rgba(20,33,61,1) 46%, rgba(102,76,33,0.9953168767507002) 100%);
             
             /* Purple & Pink */
-            /* background: rgb(74,78,105);
-            background: linear-gradient(187deg, rgba(74,78,105,1) 46%, rgba(119,99,95,1) 100%); */
+            /* background: rgb(74,78,105); */
+            /* background: linear-gradient(187deg, rgba(74,78,105,1) 46%, rgba(119,99,95,1) 100%); */
             color: var(--white);
             text-align: center;
             padding-top: 60px;
@@ -224,7 +224,7 @@
             color: var(--text-color);
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(117, 112, 112, 0.1);
         }
 
         /* Contact Section */
@@ -268,6 +268,153 @@
         .social-links a:hover {
             color: var(--secondary-color);
             transform: scale(1.1);
+        }
+
+        /* Styles for Experience Timeline Container */
+        .timeline-container {
+            max-width: 100%;
+            margin: 20px auto;
+            padding: 15px;
+            box-sizing: border-box;
+            }
+
+        /* Section Title */
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        /* Experience Timeline Container */
+        .experience-timeline {
+            max-width: 1200px;
+            width: 75%;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            position: relative;
+        }
+
+        /* Vertical Line */
+        .experience-timeline::before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: var(--primary-color);
+            top: 0;
+            bottom: 0;
+            left: 30px;
+            z-index: 1;
+        }
+
+        /* Experience Item */
+        .experience-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        /* Timeline Dot */
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            left: 24px;
+            z-index: 2;
+            border: 2px solid white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* Experience Card */
+        .experience-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            margin-left: 70px;
+            flex-grow: 1;
+            transition: transform 0.3s ease;
+        }
+
+        .experience-card:hover {
+            transform: scale(1.02);
+        }
+
+        .experience-card h3 {
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
+        }
+
+        .experience-card .company {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-card .date {
+            color: #6c757d;
+            margin-bottom: 1rem;
+        }
+
+        /* Company Header */
+        .company-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .company-logo {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            margin-right: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .company-info {
+            flex-grow: 1;
+        }
+
+        .experience-card h2 {
+            color: var(--secondary-color);
+            margin-bottom: 0.25rem;
+        }
+
+        .experience-card h3 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-card .date {
+            color: #6c757d;
+            margin-bottom: 1rem;
+        }
+
+        /* Role Separator */
+        .role-separator {
+            border-top: 1px solid #e0e0e0;
+            margin: 1rem 0;
         }
 
         /* Responsive Design */
@@ -346,6 +493,40 @@
             .social-links a {
                 font-size: 20px;
             }
+
+            /* Styles for milestones */
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .experience-timeline {
+                width: 100%;
+            }
+
+            .experience-timeline::before {
+                left: 20px;
+            }
+
+            .experience-item::before {
+                left: 14px;
+                width: 10px;
+                height: 10px;
+            }
+
+            .experience-card {
+                margin-left: 50px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .experience-card {
+                margin-left: 40px;
+                padding: 1rem;
+            }
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -403,6 +584,106 @@
         </div>
     </section>
 
+    <!-- Milestones Secto=ion -->
+    <div class="timeline-container">
+        <h2 class="section-title">Professional Experience</h2>
+        <div class="experience-timeline">
+            <div class="experience-item">
+                <div class="experience-card">
+                    <div class="company-header">
+                        <div class="company-logo">Co</div>
+                        <div class="company-info">
+                            <h2>Cognizant Technology Solutions, Singapore</h2>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3>Senior Software Engineer</h3>
+                        <div class="date">April 2023 - August 2024</div>
+                        <p>
+                            Developed high-quality web applications using Ruby on Rails and ReactJS, adhering to Agile methodologies, which resulted in efficient and timely project delivery.
+                        </p>
+                    </div>
+
+                    <div class="role-separator"></div>
+
+                    <div>
+                        <h3>Full Stack Developer</h3>
+                        <div class="date">August 2019 - March 2023</div>
+                        <p>
+                            Developed a centralized portal for government grants, consolidating grant information across various sectors, and enhancing public access and streamlining the grant application process.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-card">
+                    <div class="company-header">
+                        <div class="company-logo">BS</div>
+                        <div class="company-info">
+                            <h2>Bescene SG, Singapore</h2>
+                        </div>
+                    </div>
+    
+                    <div>
+                        <h3>Full Stack Developer</h3>
+                        <div class="date">Jun 2019 - Dec 2021</div>
+                        <p>Developed and maintained full-stack web applications, focusing on performance optimization and user experience.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="experience-item">
+                <div class="experience-card">
+                    <div class="company-header">
+                        <div class="company-logo">Nex</div>
+                        <div class="company-info">
+                            <h2>NEX Co., Ltd, Myanmar</h2>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3>Senior Backend Engineer</h3>
+                        <div class="date">June 2015 - September 2017</div>
+                        <p>
+                            Directed the Ruby on Rails team in creating applications like Career Hero and ConnectJim, improving job-seeking and recruitment experiences for clients across multiple regions.
+                        </p>
+                    </div>
+
+                    <div class="role-separator"></div>
+
+                    <div>
+                        <h3>Backend Engineer</h3>
+                        <div class="date">June 2015 - May 2016</div>
+                        <p>
+                            Created and supported web and mobile applications such as Shwe Thee Nhan and Kyeet, providing solutions for agriculture and election monitoring tailored to local needs.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-card">
+                    <div class="company-header">
+                        <div class="company-logo">TF</div>
+                        <div class="company-info">
+                            <h2>Tech Fun Myanmar Co., Ltd, Myanmar</h2>
+                        </div>
+                    </div>
+    
+                    <div>
+                        <h3>Software Developer</h3>
+                        <div class="date">October 2013 - November 2014</div>
+                        <p>
+                            Developed “Course” and “LMS Management” modules in PHP and Zend Framework, enabling seamless access to paid and free courses with certificate tracking.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
@@ -423,6 +704,8 @@
             </div>
         </div>
     </section>
+
+    
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
